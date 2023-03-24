@@ -11,4 +11,6 @@ INSERT INTO fav_books VALUES (3, "The Places I've Cried in Public", 5/5);
 INSERT INTO fav_books VALUES (4, "The Art of Letting God", 5/5);
 INSERT INTO fav_books VALUES (5, "100 Days of Sunlight", 5/5);
 
+/* Select all books */
+
 SELECT * FROM fav_books;
