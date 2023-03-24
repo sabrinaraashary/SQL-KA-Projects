@@ -1,0 +1,14 @@
+/*  Challenge: Box office hits database
+
+Step 1
+Create a table to store your list of books. It should have columns for id, name, and rating. */
+
+CREATE TABLE fav_books (id INTEGER PRIMARY KEY, name TEXT, rating REAL);
+
+INSERT INTO fav_books VALUES (1, "Lease on Love", 5/5);
+INSERT INTO fav_books VALUES (2, "The Weight of Our Sky", 5/5);
+INSERT INTO fav_books VALUES (3, "The Places I've Cried in Public", 5/5);
+INSERT INTO fav_books VALUES (4, "The Art of Letting God", 5/5);
+INSERT INTO fav_books VALUES (5, "100 Days of Sunlight", 5/5);
+
+SELECT * FROM fav_books;
