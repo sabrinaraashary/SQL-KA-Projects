@@ -1,0 +1,57 @@
+/* Project: Famous people
+
+In this project, you’re going to make your own table with some small set of “famous people”,
+then make more tables about things they do and join those to create nice human readable lists.
+
+For example, here are types of famous people and the questions your data could answer:
+
+Movie stars: What movies are they in? Are they married to each other?
+Singers: What songs did they write? Where are they from?
+Authors: What books did they write?
+Fictional characters: How are they related to other characters? What books do they show up in? */
+
+/* Create table about the people and what they do here */
+
+CREATE TABLE marauders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    house TEXT,
+    subject TEXT);
+    
+CREATE TABLE quidditch (
+    name_id INTEGER,
+    team TEXT,
+    position TEXT);
+    
+INSERT INTO marauders (fullname, house, subject) VALUES ("James Potter", "Gryffindor", "DATDA");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Sirius Black", "Gryffindor", "DATDA");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Remus Lupin", "Gryffindor", "DATDA");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Peter Pettigrew", "Gryffindor", "Charms");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Lily Evans", "Gryffindor", "Transfiguration");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Marlene Mckinnon", "Gryffindor", "Transfiguration");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Dorcas Meadowes", "Gryffindor", "Charms");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Mary Macdonald", "Gryffindor", "Herbology");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Regulus Black", "Slytherin", "Potions");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Severus Snape", "Slytherin", "Potions");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Xenophilius Lovegood", "Ravenclaw", "Astronomy");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Amos Diggory", "Hufflepuff", "COMC");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Alice Fortescue", "Gryffindor", "Arithmancy");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Frank Longbottom", "Gryffindor", "Muggle Studies");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Andromeda Black", "Slytherin", "HoM");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Ted Tonks", "Hufflepuff", "Alchemy");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Lucius Malfoy", "Slytherin", "DATDA");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Narcissa Black", "Slytherin", "Astronomy");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Bellatrix Black", "Slytherin", "DATDA");
+INSERT INTO marauders (fullname, house, subject) VALUES ("Pandora Sailstream", "Ravenclaw", "Potions");
+
+INSERT INTO quidditch (name_id, team, position) VALUES (1, "Gryffindor", "Chaser");
+INSERT INTO quidditch (name_id, team, position) VALUES (2, "Gryffindor", "Beater");
+INSERT INTO quidditch (name_id, team, position) VALUES (6, "Gryffindor", "Beater");
+INSERT INTO quidditch (name_id, team, position) VALUES (7, "Gryffindor", "Chaser");
+INSERT INTO quidditch (name_id, team, position) VALUES (9, "Slytherin", "Chaser");
+
+/* Return the quidditch position for each person */
+
+SELECT fullname, house, position FROM marauders
+    LEFT OUTER JOIN quidditch
+    ON marauders.id = quidditch.name_id;
