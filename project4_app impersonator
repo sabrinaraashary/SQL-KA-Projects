@@ -1,0 +1,38 @@
+/* Project: App impersonator
+
+Think about your favorite apps, and pick one that stores your data- like a game that stores scores, an app that lets you post updates, etc.
+Now in this project, you're going to imagine that the app stores your data in a SQL database (which is pretty likely!),
+and write SQL statements that might look like their own SQL.
+
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app. */
+
+/* What does the app's SQL look like? */
+
+CREATE TABLE tiktok (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT,
+    followers INTEGER);
+    
+INSERT INTO tiktok (username, followers)
+    VALUES ("Barbie", 45);
+INSERT INTO tiktok (username, followers)
+    VALUES ("Bestdressed", 100);
+INSERT INTO tiktok (username, followers)
+    VALUES ("Kaiti Yoo", 70);
+INSERT INTO tiktok (username, followers)
+    VALUES ("Ken", 30);
+INSERT INTO tiktok (username, followers)
+    VALUES ("Nyna Sabrina", 150);
+    
+SELECT * FROM tiktok;
+
+UPDATE tiktok SET username = "ninskins" WHERE username = "Nyna Sabrina";
+
+SELECT * FROM tiktok;
+
+DELETE FROM tiktok WHERE username = "Ken";
+
+SELECT * FROM tiktok;
