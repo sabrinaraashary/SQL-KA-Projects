@@ -1,0 +1,35 @@
+/* Project: Design a store database
+
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in.
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store.
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items. */
+
+CREATE TABLE booksbynins 
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    author TEXT,
+    gr_rating REAL,
+    price_RM INTEGER);
+    
+INSERT INTO booksbynins VALUES
+    (1, "A Woman Is No Man", "Etaf Rum", 4.26, 45),
+    (2, "Alone With You In The Ether", "Olivie Blake", 4.47, 60),
+    (3, "Book Lovers", "Emily Henry", 4.65, 55),
+    (4, "Everything I Know About Love", "Dolly Alderton", 4.16, 50),
+    (5, "From Lukov with Love", "Mariana Zapata", 4.33, 55),
+    (6, "How to Fall Out of Love Madly", "Jana Casale", 3.80, 45),
+    (7, "Just Listen", "Sarah Dessen", 4.05, 50),
+    (8, "Kim Jiyoung, Born 1982", "Cho Nam-joo", 4.16, 55),
+    (9, "If I Had Your Face", "Frances Cha", 3.76, 55),
+    (10, "Not Here to Be Liked", "Michelle Quach", 4.11, 55),
+    (11, "Pack Up the Moon", "Kristan Higgins", 4.31, 60),
+    (12, "One True Loves", "Taylor Jenkins Reid", 4.03, 60),
+    (13, "When Breath Becomes Air", "Paul Kalanithi", 4.36, 55),
+    (14, "The Mermaid from Jeju", "Sumi Hahn", 3.90, 50),
+    (15, "A Good Girl’s Guide to Murder", "Holly Jackson", 4.37, 55);
+    
+SELECT * FROM booksbynins WHERE price_RM >= 50 ORDER BY price_RM;
+
+SELECT name, gr_rating FROM booksbynins
+    WHERE gr_rating > 4.5 AND price_RM < 56
+    ORDER BY gr_rating;
